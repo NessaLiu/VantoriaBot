@@ -31,6 +31,7 @@ def create_database():
     print(f"Database {DB_NAME} created!")
 
 # Create tables 
+
 def create_tables():
     cursor.execute(f"USE {DB_NAME}")
 
