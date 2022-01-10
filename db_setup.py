@@ -10,19 +10,17 @@ DB_NAME = database
 # Empty dictionary for tables
 TABLES = {}
 
-TABLES['PROFILE'] = (
-    "CREATE TABLE `PROFILE` ("
-    " `User` varchar(19) NOT NULL,"
-    " `Name` varchar(20) NOT NULL,"
-    " `Introduction` varchar(30) NOT NULL,"
-    " `Hobby` varchar(20) NOT NULL,"
-    " `Colour` varchar(10) NOT NULL,"
-    " `Food` varchar(30) NOT NULL,"
-    " `Movie` varchar(30) NOT NULL,"
-    " `Song` varchar(20) NOT NULL,"
-    " PRIMARY KEY (`User`)"
-    ") ENGINE=InnoDB"
-)
+TABLES['PROFILE'] = """CREATE TABLE PROFILE (
+    User varchar(19) NOT NULL, 
+    Name varchar(20) NOT NULL, 
+    Introduction varchar(30) NOT NULL, 
+    Hobby varchar(20) NOT NULL, 
+    Colour varchar(10) NOT NULL, 
+    Food varchar(30) NOT NULL, 
+    Movie varchar(30) NOT NULL, 
+    Song varchar(20) NOT NULL, 
+    PRIMARY KEY (User)) ENGINE=InnoDB
+"""
 
 def create_database():
     cursor.execute(
@@ -33,22 +31,24 @@ def create_database():
 # Create tables 
 
 def create_tables():
+
     cursor.execute(f"USE {DB_NAME}")
+    cursor.execute(TABLES['PROFILE'])
+    print("Made Table 'profile'")
 
-    for tbl_name in TABLES:
-
-        tbl_desc = TABLES[tbl_name]
-
-        try:
-            print(f"Making table: {tbl_name} ", end="")
-            cursor.execute(tbl_desc)
-        except mysql.connector.Error as err:
-            # if the error is that the table already exists
-            if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
-                print("Table already exists!")
-            else:
-                # if the error is something else, print the error msg
-                print(err.msg)
+   # tbl_desc = TABLES[tbl_name]
+    ''''
+    try:
+        print(f"Making table: {tbl_name} ", end="")
+        cursor.execute(TABLES['PROFILE'])
+    except mysql.connector.Error as err:
+        # if the error is that the table already exists
+        if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
+            print("Table already exists!")
+        else:
+            # if the error is something else, print the error msg
+            print(err.msg)
+    '''
 
 
 # Create Profile
