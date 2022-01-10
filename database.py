@@ -26,7 +26,7 @@ except Exception:
     print('Unexpected error:', sys.exc_info())
 
 
-db = mysql.connector.connect(**DATABASES['default'])
+db = mysql.connector.connect(DATABASES['default'])
 cursor = db.cursor()
 
 
