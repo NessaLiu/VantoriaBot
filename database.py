@@ -5,6 +5,7 @@ import os
 url = os.environ['DATABASE_URL']
 
 
+print(url)
 config = {
     'host': url,
     'user': None,
