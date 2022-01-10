@@ -10,7 +10,7 @@ DB_NAME = database
 # Empty dictionary for tables
 TABLES = {}
 
-TABLES['PROFILE'] = """CREATE TABLE PROFILE (
+TABLES['PROFILE'] = """CREATE TABLE IF NOT EXISTS PROFILE (
     User varchar(19) NOT NULL, 
     Name varchar(20) NOT NULL, 
     Introduction varchar(30) NOT NULL, 
