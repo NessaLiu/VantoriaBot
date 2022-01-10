@@ -119,6 +119,7 @@ async def _GetId(ctx: SlashContext, user: user):
 )
 async def _CreateProfile(ctx: SlashContext, user: user, name: str, introduction: str, favouritehobby: str, favouritecolour: str, favouritefood: str, favouritemovie: str, favouritesong: str):
      
+    await ctx.defer()
     # Get the user's Discord ID
     user_id = str(user.id)
     
