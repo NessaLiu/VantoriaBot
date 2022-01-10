@@ -1,8 +1,0 @@
-beautifulsoup4==4.10.0
-discord==1.7.3
-discord-py-interactions==3.0.2
-discord-py-slash-command==3.0.3
-discord.py==1.7.3
-mysql-connector==2.2.9
-mysql-connector-python==8.0.27
-python-dotenv==0.19.2
