@@ -2,8 +2,8 @@ from bot import start_client
 from db_setup import create_tables
 
 def main():
-    start_client()
     create_tables()
+    start_client()
 
 
 if __name__ == "__main__":

@@ -58,6 +58,7 @@ async def on_guild_join(guild):
     ]
 )
 async def _GetId(ctx: SlashContext, user: user):
+    await ctx.defer()
     user_id = str(user.id)
     await ctx.send(f"<@{user.id}>'s ID is: {user_id}")
 
@@ -150,7 +151,7 @@ async def _CreateProfile(ctx: SlashContext, user: user, name: str, introduction:
     ]
 )
 async def _ViewProfile(ctx: SlashContext, user: user):
-
+    await ctx.defer()
     # Get the user's Discord ID
     user_id = str(user.id)
     
@@ -246,7 +247,7 @@ async def _ViewProfile(ctx: SlashContext, user: user):
     ]
 )
 async def _EditProfile(ctx: SlashContext, user: user, field: str, edit: str):
-    
+    await ctx.defer()
     # Get the user ID and call function
     user_id = str(user.id)
     if check_profile_existence(user_id):
@@ -271,6 +272,7 @@ async def _EditProfile(ctx: SlashContext, user: user, field: str, edit: str):
     ]
 )
 async def _DeleteProfile(ctx: SlashContext, user:user):
+    await ctx.defer()
     # get user id and call function
     user_id = str(user.id)
     if check_profile_existence(user_id):
@@ -474,6 +476,7 @@ async def _Help(ctx: SlashContext):
     guild_ids=guilds_list
 )
 async def _quoteTest(ctx:SlashContext):
+    await ctx.defer()
     await ctx.send(love_quotes[0])
 
 @slash.slash(
@@ -482,6 +485,7 @@ async def _quoteTest(ctx:SlashContext):
     guild_ids=guilds_list
 )
 async def _Quote(ctx:SlashContext):
+    await ctx.defer()
 
     # Explain game to player -- EMBED HERE
     embed = discord.Embed(
@@ -572,6 +576,7 @@ async def _Quote(ctx:SlashContext):
 )
 #async def _8ball(ctx, *, question):
 async def _8ball(ctx: SlashContext, question: str):
+    await ctx.defer()
     # Create and store responses
     responses =[
         'For sure, bro.',
@@ -625,7 +630,7 @@ async def _8ball(ctx: SlashContext, question: str):
 )
 #async def _rockpaperscissors(ctx, *, player_move):
 async def _rockPaperScissors(ctx: SlashContext, move: str):
-    
+    await ctx.defer()
     # bot move
     bot_move = ['ROCK', 'PAPER', 'SCISSORS']
     bot_response = random.choice(bot_move)
@@ -684,7 +689,7 @@ async def _rockPaperScissors(ctx: SlashContext, move: str):
     guild_ids=guilds_list
 )
 async def _Trivia(ctx: SlashContext): 
-    
+    await ctx.defer()
     # Explain game to player -- EMBED HERE
     embed = discord.Embed(
         title = 'Welcome to trivia! Please read the instructions below.',
