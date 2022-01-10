@@ -8,7 +8,7 @@ import random
 from quotes import *
 # import database
 from db_setup import *
-
+import asyncio
 # WILL COME BACK TO 
 from discord import guild
 from discord_slash import SlashCommand, SlashContext
@@ -16,7 +16,7 @@ from discord_slash.model import GuildPermissionsData
 from discord_slash.utils.manage_commands import create_choice, create_option
 import os
 from dotenv import load_dotenv
-import asyncio
+
 
 # Get bot token
 load_dotenv()
