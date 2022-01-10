@@ -15,17 +15,18 @@ from discord_slash import SlashCommand, SlashContext
 from discord_slash.model import GuildPermissionsData
 from discord_slash.utils.manage_commands import create_choice, create_option
 import os
+from dotenv import load_dotenv
 import asyncio
 
+# Get bot token
+load_dotenv()
+token = os.environ.get('VantoriaBotToken')
 
 # Create client
 client = commands.Bot(command_prefix='-')
 
 # Create slash
 slash = SlashCommand(client, sync_commands=True)
-
-# Get bot token
-token = os.environ.get('VantoriaBotToken')
 
 # ----------------------- Guilds -----------------------
 
