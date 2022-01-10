@@ -8,10 +8,9 @@ DATABASES = {}
 url = urlparse(os.environ['DATABASE_URL'])
 
 config = {
-    'NAME': url.path[1:],
+    'HOST': url.path[1:],
     'USER': url.username,
     'PASSWORD': url.password,
-    'HOST': url.hostname,
     'PORT': url.port,
 }
 
