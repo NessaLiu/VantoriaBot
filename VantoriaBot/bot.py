@@ -14,8 +14,7 @@ from discord import guild
 from discord_slash import SlashCommand, SlashContext
 from discord_slash.model import GuildPermissionsData
 from discord_slash.utils.manage_commands import create_choice, create_option
-#import json
-#import os
+import os
 import asyncio
 
 
@@ -24,8 +23,9 @@ client = commands.Bot(command_prefix='-')
 
 # Create slash
 slash = SlashCommand(client, sync_commands=True)
-token = 'OTI1MTUxMjUzMjg4MzQxNTM0.Yco8Pw.vp5KknUlYVmFgxCHFWKO08Suej4'
-our_guild = 925153227794694235
+
+# Get bot token
+token = os.environ.get('VantoriaBotToken')
 
 # ----------------------- Guilds -----------------------
 
