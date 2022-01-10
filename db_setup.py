@@ -1,8 +1,11 @@
 import mysql.connector
 from mysql.connector import errorcode
 from database import cursor, db
+import os
 
-DB_NAME = 'VANTORIA'
+url = os.environ['DATABASE_URL']
+database = url.split('/')[-1].split('?')[0]
+DB_NAME = database
 
 # Empty dictionary for tables
 TABLES = {}
